@@ -107,19 +107,33 @@ public class Controller {
 	public void markAsDone(String id, String chooseProject) {
 		
 		Project tmpProj = projectList.getProjectList().get(chooseProject);
-		Task tmpTask = tmpProj.findTask(id);
-		
-		tmpTask.setStatus("Done");
-		System.out.println("Task " + id + " marked as done");
+		if(this.taskInProject(id, chooseProject)) {
+			
+			Task tmpTask = tmpProj.findTask(id);
+			
+			tmpTask.setStatus("Done");
+			System.out.println("Task " + id + " marked as done");
+			
+		}
+		else {
+			System.out.println("There is no such task. Pick task from the list.");
+			
+		}
 	}
 	
 	public void removeTask(String id, String chooseProject) {
 		
 		Project tmpProj = projectList.getProjectList().get(chooseProject);
-		tmpProj.removeTask(id);
 		
-		System.out.println("Task removed");
+		if(this.taskInProject(id, chooseProject)) {
+			tmpProj.removeTask(id);
+			
+			System.out.println("Task removed");
+		}
 		
+		else {
+			System.out.println("There is no such task. Pick task from the list.");
+		}
 		
 		
 	}
@@ -144,6 +158,34 @@ public class Controller {
 		
 		tmpTask.setDate(newDate);
 	}
-
+	
+	public boolean taskInProject(String id, String chooseProject) {
+		
+		boolean inTheProject;
+		Project tmpProj = projectList.getProjectList().get(chooseProject);
+		if(tmpProj.getTaskList().containsKey(id)) {
+			inTheProject = true;
+		}
+		else {
+			inTheProject = false;
+		}
+		return inTheProject;
+		
+		
+	}
+	public void showAllProjects() {
+		System.out.println(projectList.saveAllProjects());
+	}
+	
+	public boolean projectInProjectList(String id) {
+		boolean inTheProjectList;
+		if(projectList.getProjectList().containsKey(id)) {
+			inTheProjectList = true;
+		}
+		else {
+			inTheProjectList = false;
+		}
+		return inTheProjectList;
+	}
 }
 

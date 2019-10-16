@@ -26,6 +26,15 @@ public class ProjectList {
 		return projectList.get(id);
 	}
 	
-	//add showalltasks;
+	public String saveAllProjects() {
+		
+		String toSave = "";
+		for(Project i : projectList.values()) {
+			for(Task j : i.getTaskList().values()) {
+				toSave += (i.getId() + " " + j.getTask() + " " + j.getDate() + " " + j.getStatus() + "\n");
+			}
+		}
+		return toSave;
+	}
 	
 }

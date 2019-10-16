@@ -148,7 +148,10 @@ public class Loops {
 				controller.showTaskListByProject(chooseProject);
 				break;
 			case 4: 
-				System.out.println(choice);
+				System.out.println("Choose task you want to move.");
+				controller.showTaskListByProject(chooseProject);
+				String taskId3 = Parser.getStringInput(scan);
+				this.moveTaskMenu(taskId3, chooseProject);
 				break;
 			
 			
@@ -158,22 +161,52 @@ public class Loops {
 	
 	public void updateTask(String id, String chooseProject) throws IOException {
 		
-		System.out.println("To edit task name: press 1. To edit date: press 2");
-		int choice = Parser.getInput(scan, 2);
+		if(controller.taskInProject(id, chooseProject)) {
+			System.out.println("To edit task name: press 1. To edit date: press 2");
+			int choice = Parser.getInput(scan, 2);
+			
+			switch(choice) {
+			case 1:
+				controller.changeTaskName(id, chooseProject);
+				System.out.println("Changes saved");
+				break;
+			case 2:
+				controller.changeDueDate(id, chooseProject);
+				System.out.println("Changes saved");
+				break;
+			
+			}
+		}
+		else {
+			System.out.println("There is no such task. Pick a task from a list");
+		}
 		
-		switch(choice) {
-		case 1:
-			controller.changeTaskName(id, chooseProject);
-			System.out.println("Changes saved");
-			break;
-		case 2:
-			controller.changeDueDate(id, chooseProject);
-			System.out.println("Changes saved");
-			break;
 		
+		
+	}
+	
+	public void moveTaskMenu(String id, String chooseProject) throws IOException {
+		
+		if(controller.taskInProject(id, chooseProject)) {
+			System.out.println("Choose a new project for this task.");
+			String newProject = Parser.getStringInput(scan);
+			this.selectNewProject(newProject);
+		}
+		else {
+			System.out.println("Not done");
 		}
 		
 	}
 	
+	public void selectNewProject(String newProject) {
+		
+		if(controller.projectInProjectList(newProject)) {
+			System.out.println("Project in List");
+		}
+		else {
+			System.out.println("There is no such project.");
+		}
+		
+	}
 	
 }
