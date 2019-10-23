@@ -1,3 +1,11 @@
+/**
+ * Task allows to create and retrieve task objects
+ * Task object is the main component of a task list
+ * Contains unique ID, task name, due date and status (done or undone)
+ * 
+ */
+
+
 package classes;
 
 public class Task {
@@ -12,6 +20,14 @@ public class Task {
 		this.task = task;
 		this.date = date;
 		this.status = "Undone";
+	}
+	
+	public Task(String id, String task, String date, String status) {
+		this.id = id;
+		this.task = task;
+		this.date = date;
+		this.status = status;
+		
 	}
 	
 	public Task() {
@@ -50,4 +66,6 @@ public class Task {
 	public String getStatus() {
 		return status;
 	}
+
+	
 }

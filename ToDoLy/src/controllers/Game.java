@@ -5,6 +5,7 @@ import java.util.Scanner;
 import classes.Project;
 import classes.ProjectList;
 import classes.Task;
+import creators.FileReaderWriter;
 
 
 
@@ -14,19 +15,24 @@ public class Game {
 	
 	private Scanner scan;
 	private Loops loop;
+	private FileReaderWriter fread;
+	private Controller controller;
 	
 	
-	
-	public Game(Scanner scan, Loops loop) {
+	public Game(Scanner scan, Loops loop, FileReaderWriter fread, Controller controller) {
 		this.scan = scan;
 		this.loop = loop;
+		this.fread = fread;
+		this.controller = controller;
 		
 	}
 	
 	private void printWelcome() {
 		
 		System.out.println(">> Welcome to ToDoLy5000");
-		System.out.println(">> You have X tasks todo and Y tasks are done!");
+		System.out.println(">> You have " + controller.getUndoneTasks() + " tasks to do and " + controller.getDoneTasks() +  " tasks are done!");
+		System.out.println(controller.expiredTasksMenu());
+		System.out.println(">> You have " + controller.tasksForToday() + " tasks to finish today!");
 		System.out.println(">> Pick an option:");
 		System.out.println(">> (1) Show Task List (by date or project)");
 		System.out.println(">> (2) Add New Task");
@@ -36,8 +42,13 @@ public class Game {
 		
 	}
 	
+public void init() {
+		
+	}
+	
 	public void play() throws IOException {
 		
+		fread.readFromFile();
 		
 		boolean finished = false;
 		

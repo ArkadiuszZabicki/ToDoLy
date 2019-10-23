@@ -1,3 +1,9 @@
+/**
+ * Project contains all tasks in a form of HashMap
+ * It takes unique Id and a task as a parameter
+ * Methods can be used to add, retrieve or remove singular tasks.
+ */
+
 package classes;
 import java.util.HashMap;
 
