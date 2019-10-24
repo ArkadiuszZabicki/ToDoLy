@@ -48,3 +48,13 @@ All changes will be saved in a file on a hard drive. Program will quit.
 
 ## Glossary
 
+Enter - a big button on your keybord. Usually with "Enter" sign on it.
+
+Input - an outcome of physical activity performed by the user. Every time we ask you for input you have to use your keybord, type something and hit enter. That's input.
+
+Keybord - set of buttons you use to find cute kittens online.
+
+Project - a set of tasks. Imagine a piece of paper, where you write your shopping list - that's your project. A container for your activities. 
+
+Task - thing you have to do, but you don't want to. If you would want to do it, you wouldn't waste your time to write it down, because you would do it already. Comes with a date.
+
