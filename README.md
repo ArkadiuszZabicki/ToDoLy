@@ -32,4 +32,4 @@ Nothing special here. Just removes tasks.
 
 We believe in our customers, that's why we didn't provide any form of support. Ask yourself this - in a world, where you have to be a lion or shark or any other dangerous creature (dinosaur, maybe?) - do you really want to admit to yourself and to the whole world, that your incapable of doing something, that you are not the lion (or dinosaur)? Yeah, that's what I thought. Don't be a wimp, life is not just a bed of roses.
 
-Eventualy, you can write an e-mail to Johan Ravnborg, he approved this project.
+Eventualy, you can write an e-mail to Johan Ravnborg, he approved this project - just google him, he lives somewhere in Lund.
