@@ -14,7 +14,7 @@ ToDoLy 5000 is like a high tech bucket list that stores your tasks and projects.
 
 ### Showing tasks
 
-I know, right? You can get all tasks at once. You can only get few tasks. You can get tasks for a specific date or choosen project. When it comes to getting tasks, ToDoLy 5000 will give them to you.
+I know, right? You can get all tasks at once. You can get only few tasks. You can get tasks for a specific date or choosen project. When it comes to getting tasks, ToDoLy 5000 will give them to you.
 
 ### Sorting tasks
 
