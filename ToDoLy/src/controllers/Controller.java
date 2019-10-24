@@ -539,7 +539,7 @@ public String expiredTasksList() {
 	for(Project i : projectList.getProjectList().values()) {
 		for(Task j : i.getTaskList().values()) {
 			if(LocalDate.parse(j.getDate(), formatter).isBefore(now) && j.getStatus().equals("Undone")) {
-				expiredTasks += "Project " + i.getId() + ": " + j.getTask() + ", " + j.getDate();
+				expiredTasks += "Project " + i.getId() + ": " + j.getTask() + ", " + j.getDate() + "\n";
 			}
 		}
 	}
@@ -565,6 +565,24 @@ public String expiredTasksMenu() {
 	return message;
 }
 
+/**
+ * Method returns next id from given project. This ID is used then while creating new tasks.
+ * @param projectId
+ * @return
+ */
+
+public int nextId(String projectId) {
+	
+	int nextId = 0;
+	
+	
+		
+	nextId = projectList.getProjectList().get(projectId).getNextId();
+	
+	
+	
+	return nextId + 1;
+}
 
 }
 

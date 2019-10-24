@@ -44,7 +44,7 @@ public class Creator {
 		if(projectList.getProjectList().containsKey(id)) {
 			
 			Task tmpTask;
-			tmpTask = this.addTask();
+			tmpTask = this.addTask(id);
 			projectList.findProject(id).addTask(tmpTask);
 			System.out.println("Task added");
 			System.out.println("-----");
@@ -69,15 +69,15 @@ public class Creator {
 	 * @throws IOException
 	 */
 	
-	public Task addTask() throws IOException {
+	public Task addTask(String projectId) throws IOException {
 		
 		Task tmpTask;
 		String id;
 		String task;
 		String date;
 		
-		System.out.println("Enter new task ID");
-		id = Parser.getStringInput(scan);
+		
+		id = Integer.toString(controller.nextId(projectId));
 		System.out.println("Enter new task name");
 		task = Parser.getStringInput(scan);
 		System.out.println("Enter new due date (Accepted date format is MM/dd/yyyy)");
