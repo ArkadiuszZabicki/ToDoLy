@@ -12,6 +12,7 @@ import classes.ProjectList;
 import classes.Task;
 import creators.Creator;
 import creators.FileReaderWriter;
+import creators.Initializer;
 
 
 public class Test {
@@ -23,22 +24,13 @@ public class Test {
 	
 	
 	
-	ProjectList prList = new ProjectList();
-	Scanner scan = new Scanner(System.in);
-	InputStreamReader isr = new InputStreamReader(System.in);
-	BufferedReader bread = new BufferedReader(isr);
-	Parser pars = new Parser(scan, bread, isr);
-	Controller controller = new Controller(prList, scan);
-	Creator creator = new Creator(scan, prList, controller);
-	FileReaderWriter fileReader = new FileReaderWriter(bread, isr, creator, controller);
-	Loops loop = new Loops(scan, controller, creator, fileReader);
-	Game newGame = new Game(scan, loop, fileReader, controller);
+	Initializer init = new Initializer();
+	
+	init.intit();
 	
 	
 	
 	
-	
-	newGame.play();
 	
 	}
 	

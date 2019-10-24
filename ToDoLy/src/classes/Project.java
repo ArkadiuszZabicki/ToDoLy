@@ -11,7 +11,7 @@ import java.util.HashMap;
 public class Project {
 	
 	private String id;
-	private String date;
+	private int nextId;
 	
 	HashMap<String,Task> taskList;
 	
@@ -30,6 +30,7 @@ public class Project {
 	
 	public void addTask(Task task) {
 		getTaskList().put(task.getId(), task);
+		this.nextId ++;
 	}
 	
 	public void setId(String id) {
@@ -45,14 +46,11 @@ public class Project {
 	
 	public void removeTask(String id) {
 		taskList.remove(id);
+		this.nextId --;
 	}
 	
-	public void setDate(String date) {
-		this.date = date;
-	}
-	
-	public String getDate() {
-		return date;
+	public int getNextId() {
+		return nextId;
 	}
 	
 	public void printTaskList() {
