@@ -91,7 +91,7 @@ public class FileReaderWriter {
 				}
 				else {
 					creator.addProjectFromFile(split[0]);
-					creator.addTaskFromFile(split[1], split[2], split[3], split[4], split[0]);
+					creator.addTaskFromFile(Integer.toString(controller.nextId(split[0])), split[2], split[3], split[4], split[0]);
 				}
 				
 				
