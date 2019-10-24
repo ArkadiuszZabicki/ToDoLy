@@ -62,13 +62,19 @@ public class Loops {
 		switch(choice) {
 		
 		case 1:
-			System.out.println("Show tasks by date: press 1" + "\n" + "Show tasks by project: press 2" + "\n" + 
-								"Show all tasks sorted by date: press 3" + "\n" + "Show all tasks sorted by project: press 4" + "\n" + 
-								"Show today's tasks: press 5" + "\n" + "Show expired tasks: press 6");
-			int choiceTwo = Parser.getInput(scan, 6);
-			this.showTaskListMenu(choiceTwo);
-			status = false;
-			break;
+			if(!controller.isProjectEmpty()) {
+				System.out.println("Show tasks by date: press 1" + "\n" + "Show tasks by project: press 2" + "\n" + 
+						"Show all tasks sorted by date: press 3" + "\n" + "Show all tasks sorted by project: press 4" + "\n" + 
+						"Show today's tasks: press 5" + "\n" + "Show expired tasks: press 6");
+						int choiceTwo = Parser.getInput(scan, 6);
+						this.showTaskListMenu(choiceTwo);
+						status = false;
+						break;
+			}
+			else {
+				System.out.println("You don't have any tasks. List is empty.");
+				break;
+			}
 		case 2:
 			System.out.println("Add to existing project: press 1. Add to new project: press 2.");
 			int choiceThree = Parser.getInput(scan, 2);
@@ -161,11 +167,19 @@ public class Loops {
 		switch(choice) {
 			
 		case 1:
-			System.out.println("Choose a project to add to. Available projects: " + "\n" + controller.allProjects());
-			String chooseProject = Parser.getStringInput(scan);
-			controller.showTaskListByProject(chooseProject);
-			creator.addToProject(chooseProject);
-			break;
+			if(!controller.isProjectEmpty()) {
+				System.out.println("Choose a project to add to. Available projects: " + "\n" + controller.allProjects());
+				String chooseProject = Parser.getStringInput(scan);
+				controller.showTaskListByProject(chooseProject);
+				creator.addToProject(chooseProject);
+				break;
+			}
+			
+			else {
+				System.out.println("You don't have any tasks. List is empty");
+				break;
+			}
+			
 			
 		case 2:
 			System.out.println("Type an ID for a new project");

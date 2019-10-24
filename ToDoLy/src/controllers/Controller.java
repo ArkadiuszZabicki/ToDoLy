@@ -42,6 +42,16 @@ public class Controller {
 		
 	}
 	
+	public boolean isProjectEmpty() {
+		
+		boolean status = false;
+		if(projectList.getProjectList().isEmpty()) {
+			status = true;
+		}
+		
+		return status;
+	}
+	
 	/**
 	 * Method retrieves all projects in ProjectList instance
 	 * using HashMap key() property and prints the outcome
