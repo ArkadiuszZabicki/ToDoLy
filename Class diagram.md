@@ -1,3 +1,3 @@
 # ToDoLy5000 Class diagram
 
-https://www.lucidchart.com/documents/edit/95eb3d93-9793-450b-ac04-7d475e6a95b3/0_0
+https://www.lucidchart.com/invitations/accept/b203cf82-f64d-439b-a079-b8475b16cbef
