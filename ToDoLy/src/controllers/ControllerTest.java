@@ -26,10 +26,6 @@ class ControllerTest {
 	void tearDown() throws Exception {
 	}
 
-	@Test
-	void testController() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	void testIsProjectEmpty() {
